@@ -7,58 +7,49 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public UserService $userService;
+    public function __construct()
+    {
+        $this->userService = app(UserService::class);
+    }
+
     public function index()
     {
-        $users =  User::simplePaginate(20);
+        $users =  $this->userService->index();
 
         return message(resource_collection(UserResource::collection($users)) , __('Users List'));
     }
 
-    public function show(User $user)
+    public function show($id)
     {
-        return message(new UserResource($user) , __('User Details'));
+        $user = $this->userService->find($id);
+        if($user){
+            return message(new UserResource($user) , __('User Details'));
+        }
+
+        return message([] , __('Not Fount') , false , 404);
     }
 
     public function store(UserRequest $request)
     {
-        $data = $request->only('email' , 'first_name' , 'last_name');
-
-        $data['password'] = bcrypt($request->password);
-
-        if($request->hasFile('image')){
-            $data['image'] = FileHelper::upload_file('users' , $request->image);
-        }
-
-        $user = User::create($data);
-
+        $user = $this->userService->save($request);
         return message(new UserResource($user) , __('User Created'));
     }
 
     public function update(UserRequest $request, User $user)
     {
-        $data = $request->only('email' , 'first_name' , 'last_name');
-
-        $data['password'] = bcrypt($request->password);
-
-        if($request->hasFile('image')){
-            $data['image'] = FileHelper::update_file('users' , $request->image , $user->image);
-        }
-
-        $user->update($data);
-
+        $user = $this->userService->save($request , $user);
         return message(new UserResource($user) , __('User Updated'));
     }
 
     public function destroy(User $user)
     {
-        FileHelper::delete_file($user->image);
-
-        $user->delete();
-
+        $this->userService->delete($user);
         return message([] , __('User deleted'));
 
     }

@@ -1,0 +1,1180 @@
+{
+	"info": {
+		"_postman_id": "62554083-6853-4e1f-b520-bf2ba3badc02",
+		"name": "velents_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21096449"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:08:45 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:08:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "19"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Users List\",\n    \"status\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 3,\n                \"first_name\": \"seffeen\",\n                \"last_name\": \"hosny\",\n                \"email\": \"seffeen.hosny1995@gmail.com\",\n                \"image\": \"http://127.0.0.1:8000/storage/users/ZH7fWcCGA7jaUTwSQdMh3S2f4Bu25nts1WaR7yoI.jpg\"\n            },\n            {\n                \"id\": 4,\n                \"first_name\": \"seffeen\",\n                \"last_name\": \"hosny\",\n                \"email\": \"seffeen.hosny1996@gmail.com\",\n                \"image\": \"http://127.0.0.1:8000/storage/users/SlsIOxqyO4Qk4TWr39YUx4S8sud2unYkMyLMQ0XE.jpg\"\n            },\n            {\n                \"id\": 5,\n                \"first_name\": \"seffeen\",\n                \"last_name\": \"hosny\",\n                \"email\": \"seffeen.hosny1997@gmail.com\",\n                \"image\": \"http://127.0.0.1:8000/storage/users/YyWNFRbdCGqhxSB5giVsr8a1YQLPOO4dMEXsD0Ok.jpg\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/users?page=1\",\n            \"last\": null,\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"path\": \"http://127.0.0.1:8000/api/users\",\n            \"per_page\": 20,\n            \"to\": 3\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1999@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "seffeen",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "hosny",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1996@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "seffeen",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hosny",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 18:29:47 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 18:29:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "19"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User Created\",\n    \"status\": true,\n    \"data\": {\n        \"id\": 2,\n        \"first_name\": \"seffeen\",\n        \"last_name\": \"hosny\",\n        \"email\": \"seffeen.hosny1996@gmail.com\",\n        \"image\": \"http://127.0.0.1:8000/storage/users/Fh93k8OJGmHbfwYidrvsdRcrkWpD5u8uURzRgrzQ.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1996@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "seffeen",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "hosny",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/users/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1996@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "seffeen",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hosny",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:04:51 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:04:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "17"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User Updated\",\n    \"status\": true,\n    \"data\": {\n        \"id\": 2,\n        \"first_name\": \"seffeen\",\n        \"last_name\": \"hosny\",\n        \"email\": \"seffeen.hosny1996@gmail.com\",\n        \"image\": \"http://127.0.0.1:8000/storage/users/cfxuC1AmGRtYyhjsjKcC6wZIChVkS2xYEVe6G8xz.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1995@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "seffeen",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "hosny",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/users/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1995@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "seffeen",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hosny",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:05:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:05:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "19"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User deleted\",\n    \"status\": true,\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1995@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "seffeen",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "hosny",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/users/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1995@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "seffeen",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hosny",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/seffeen/Downloads/3Vsttn9xQcswAGyqY3traPa8UJfoQfvqvJ31YbvX.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/users/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:08:29 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:08:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "17"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User Details\",\n    \"status\": true,\n    \"data\": {\n        \"id\": 3,\n        \"first_name\": \"seffeen\",\n        \"last_name\": \"hosny\",\n        \"email\": \"seffeen.hosny1995@gmail.com\",\n        \"image\": \"http://127.0.0.1:8000/storage/users/ZH7fWcCGA7jaUTwSQdMh3S2f4Bu25nts1WaR7yoI.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();",
+							"pm.environment.set('token' , response.data.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1995@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1995@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:07:43 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:07:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "14"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"\",\n    \"status\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"seffeen\",\n            \"last_name\": \"hosny\",\n            \"email\": \"seffeen.hosny1995@gmail.com\",\n            \"image\": \"http://127.0.0.1:8000/storage/users/ZH7fWcCGA7jaUTwSQdMh3S2f4Bu25nts1WaR7yoI.jpg\"\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JjZjg2YjA4YzIxYmMzYWEwODFlYTVmZDE1ZTczYTMyMmUyMTY1ZTBlM2Q4YmJjZmZiMjQxMGNjYWU2ODQ1MDZhMzk1N2QzMTYxYTg4YTEiLCJpYXQiOjE3MDgyODMyNjMuNjQ2OTY3LCJuYmYiOjE3MDgyODMyNjMuNjQ2OTY5LCJleHAiOjE3Mzk5MDU2NjMuNjM1Mzg2LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.WYY1uWIdoSzbKPcykqfBNiY_IvYkyLNAOPWCOGXwOcO55nvxlacW12w5lt0D0jOFHVFmVXcvOlf-oDqctujxNv6boFxhO4tHDLcgw657KP9dTWr2McWep34aXrB8LG9BWHJ1jWIlte_TquxnoeDxOk5UPiCnM_WIUyt1wWsXoDIFH5dOwEjDlFXgjj1fX-ASajl5dyE2aarY5-ShbsG8yUTfI4zeE2v2tx4iKqWddkUPLwDVgg343SisL0z9Hgmu0K2yGF8gnlLzlWpws6_BAYbJsocS5cXn-pK2IquaJyEjJcxsTP4vuUcrhU8lVbBGgrQ8QHeQppT1ukNA26n1-3NMuha4V4BT58gaXdQ95JLlcRPPMUzKolbwKK5smvC6nttNccrm-dZ7pxpFKaKq6S7DOmwBxs1Ge31XqRzPDlQkw2VOTAYQjyhL6lEsJkjdwAXUB9d-JwB5mFjjTuahp5YG-YP7JgJ-4vyHX7xQUQRYuM2M2EsAFKiV9cC4xNTYN4uJv7aHN-bETmFWreYQc3ewpk6zqIIJ0i_RMSIFiF_mJJVRXNLi4Uf4f5SAPzIKpgUUYZjN4_YQNcEwQDgJUb2ouKHye31KRK8aCH8VSHe6jS3mTbseGTBgJZc8_NfhIYjfPFPp-6OQd9IXB7xKV_6h2rIunGwGPIAE4stUqbI\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "user info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "seffeen.hosny1995@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"info"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1995@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:09:35 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:09:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "19"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User Info\",\n    \"status\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"seffeen\",\n            \"last_name\": \"hosny\",\n            \"email\": \"seffeen.hosny1995@gmail.com\",\n            \"image\": \"http://127.0.0.1:8000/storage/users/ZH7fWcCGA7jaUTwSQdMh3S2f4Bu25nts1WaR7yoI.jpg\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "seffeen.hosny1995@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:09:35 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2024 19:09:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2-1ubuntu2.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "20"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "19"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User Info\",\n    \"status\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"seffeen\",\n            \"last_name\": \"hosny\",\n            \"email\": \"seffeen.hosny1995@gmail.com\",\n            \"image\": \"http://127.0.0.1:8000/storage/users/ZH7fWcCGA7jaUTwSQdMh3S2f4Bu25nts1WaR7yoI.jpg\"\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}
