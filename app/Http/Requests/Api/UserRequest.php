@@ -27,7 +27,7 @@ class UserRequest extends AbstractFormRequest
             'password' => 'required|min:6|confirmed',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'image' => [requiredIf(!!$id) , 'image'],
+            'image' => [requiredIf(!$id) , 'image'],
         ];
     }
 }
